@@ -4,56 +4,11 @@ flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
 
 42hDRfypTqqnw
 
-Pas:
-	md5
-	sha{}
-	chiffre de vigenere
-	code Cesar
-	ROT
-	carre de cesar
-	base64
-	Cypher (~)
-
-
-
-
-Caesar(25) = iesgzqurrox
-Caesar(24) = jftharvsspy
-Caesar(23) = kguibswttqz
-Caesar(22) = lhvjctxuura
-Caesar(21) = miwkduyvvsb
-Caesar(20) = njxlevzwwtc
-Caesar(19) = okymfwaxxud
-Caesar(18) = plzngxbyyve
-Caesar(17) = qmaohyczzwf
-Caesar(16) = rnbpizdaaxg
-Caesar(15) = socqjaebbyh
-Caesar(14) = tpdrkbfcczi
-Caesar(13) = uqeslcgddaj
-Caesar(12) = vrftmdheebk
-Caesar(11) = wsguneiffcl
-Caesar(10) = xthvofjggdm
-Caesar(9) = yuiwpgkhhen
-Caesar(8) = zvjxqhliifo
-Caesar(7) = awkyrimjjgp
-Caesar(6) = bxlzsjnkkhq
-Caesar(5) = cymatkollir
-Caesar(4) = dznbulpmmjs
-Caesar(3) = eaocvmqnnkt
-Caesar(2) = fbpdwnroolu
-Caesar(1) = gcqexosppmv
-
-
-4
-2
-h
-D
-R
-f 
-y 
-p 
-T N
-q o
-q o
-n b
-w s
+john passwd
+Created directory: /home/samuel/.john
+Loaded 1 password hash (descrypt, traditional crypt(3) [DES 128/128 SSE2])
+Press 'q' or Ctrl-C to abort, almost any other key for status
+abcdefg          (flag01)
+1g 0:00:00:00 100% 2/3 100.0g/s 150600p/s 150600c/s 150600C/s raquel..bigman
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
