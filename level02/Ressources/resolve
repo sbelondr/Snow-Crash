@@ -1,0 +1,30 @@
+`tshark -r level02.pcap -T fields -e data`
+read `result` file
+
+and decrypt file with website: http://www.unit-conversion.info/texttools/hexadecimal/
+
+## result
+```
+��%��%��&���� ��#��'��$��&���� ��#��'��$�� ����#����'�������� 38400,38400����#SodaCan:0����'DISPLAYSodaCan:0����xterm��������"������!������"��"bb	B
+�����������1������!��"����"����!��������"������"��"����	�
+������������
+Linux 2.6.38-8-generic-pae (::ffff:10.1.1.2) (pts/10)
+
+wwwbugs login: lleevveellXX
+
+Password: ft_wandrNDRelL0L
+
+
+Login incorrect
+wwwbugs login:
+```
+
+## Deduction
+
+Password is ft_wandrNDRelL0L but is not work
+
+After ^? the caracter is repeat before
+
+test: ft_wandrel0L and ft_waNDReL0L
+
+The password is "ft_waNDReL0L"

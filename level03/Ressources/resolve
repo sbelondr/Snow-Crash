@@ -1,0 +1,16 @@
+gdm
+
+layout asm
+
+nm result:
+         U getegid@@GLIBC_2.0
+         U geteuid@@GLIBC_2.0
+080484a4 T main
+         U setresgid@@GLIBC_2.0
+         U setresuid@@GLIBC_2.0
+         U system@@GLIBC_2.0
+
+
+replace echo by cat and launch not work
+
+exploit getuid
