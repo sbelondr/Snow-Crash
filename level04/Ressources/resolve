@@ -1,0 +1,21 @@
+
+
+file in home is perl code
+
+-----
+
+Permission is: rwsr-sr-x	flag04	level04
+
+s permission: Quand le SUID est activé sur un exécutable, l’utilisateur qui exécute le fichier dispose des mêmes droits que le propriétaire.
+
+https://linux.goffinet.org/administration/securite-locale/permissions-linux/
+
+
+-----
+
+launch program:
+	perl level04.pl param=sfds
+
+
+	http://www.ouah.org/hackingcgi.htm
+	https://www.perlmonks.org/?node_id=444124
