@@ -1,11 +1,15 @@
+First, we look for information in the /etc/passwd 
 
 flag00@SnowCrash:~$ cat /etc/passwd | grep flag00
 > flag00:x:3000:3000::/home/flag/flag00:/bin/bash
+
+We find flag00 has the uid 3000, so we look for things belonging to this user.
 
 level00@SnowCrash:/etc$ find / -user 3000 2>/dev/null
 > /usr/sbin/john
 > /rofs/usr/sbin/john
 
+We read these files...
 
 level00@SnowCrash:/etc$ cat /usr/sbin/john
 > cdiiddwpgswtgt
@@ -13,5 +17,6 @@ level00@SnowCrash:/etc$ cat /usr/sbin/john
 level00@SnowCrash:/etc$ cat /rofs/usr/sbin/john
 > cdiiddwpgswtgt
 
+And find out the password, which is just encrypted using Cesar cypher.
 
 Code Cesar +13: nottoohardhere
