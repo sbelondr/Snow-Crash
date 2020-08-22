@@ -1,0 +1,51 @@
+login i see message: 
+You have new mail.
+
+also:
+
+level05@SnowCrash:~$ cat /var/mail/level05
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+
+
+level05@SnowCrash:~$ find / -user 3005 2>/dev/null
+> /usr/sbin/openarenaserver
+> /rofs/usr/sbin/openarenaserver
+
+------
+
+level05@SnowCrash:~$ cat /usr/sbin/openarenaserver
+#!/bin/sh
+
+for i in /opt/openarenaserver/* ; do
+	(ulimit -t 5; bash -x "$i")
+	rm -f "$i"
+done
+
+level05@SnowCrash:~$ ls -la /usr/sbin/openarenaserver
+-rwxr-x---+ 1 flag05 flag05 94 Mar  5  2016 /usr/sbin/openarenaserver
+
+level05@SnowCrash:~$ cat /rofs/usr/sbin/openarenaserver
+cat: /rofs/usr/sbin/openarenaserver: Permission denied
+
+------
+
+level05@SnowCrash:~$ find / -user 2005 2>/dev/null
+que le dossier proc
+
+------
+
+openarena: https://doc.ubuntu-fr.org/openarena
+
+----
+
+
+bash -x -> launch in debug mode
+
+
+ACLs chapitre 16
+
+https://www.linuxquestions.org/linux/answers/security/acls_extended_filepermissions
+
+https://github.com/opsxcq/exploit-CVE-2014-6271
+
+

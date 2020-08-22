@@ -14,8 +14,17 @@ https://linux.goffinet.org/administration/securite-locale/permissions-linux/
 -----
 
 launch program:
-	perl level04.pl param=sfds
+	perl level04.pl w=...
 
 
 	http://www.ouah.org/hackingcgi.htm
 	https://www.perlmonks.org/?node_id=444124
+
+
+----
+
+utiliser $(): https://stackoverflow.com/questions/39165520/execute-perl-script-from-bash-script
+
+executer des scripts dans des liens: https://www.cgsecurity.org/Articles/SecProg/Art6/index-fr.html
+
+http://10.11.200.145:4747/?x=$(getflag)
