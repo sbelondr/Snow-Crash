@@ -48,4 +48,12 @@ https://www.linuxquestions.org/linux/answers/security/acls_extended_filepermissi
 
 https://github.com/opsxcq/exploit-CVE-2014-6271
 
+not shellshock
 
+--------------
+
+echo "`echo $(getflag) > /tmp/flag`"
+
+wait and launch `cat /tmp/flag`
+
+apparently flag05 launch `sh /usr/sbin/openarenaserver` every 2 minutes (see mail)
