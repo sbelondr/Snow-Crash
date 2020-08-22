@@ -1,7 +1,8 @@
+level02.pcap is a wireshark file. We use this command to extract useful data from it :
 `tshark -r level02.pcap -T fields -e data`
 read `result` file
 
-and decrypt file with website: http://www.unit-conversion.info/texttools/hexadecimal/
+Then, we decrypt the file using this website: http://www.unit-conversion.info/texttools/hexadecimal/
 
 ## result
 ```
@@ -21,10 +22,5 @@ wwwbugs login:
 
 ## Deduction
 
-Password is ft_wandrNDRelL0L but is not work
-
-After ^? the caracter is repeat before
-
-test: ft_wandrel0L and ft_waNDReL0L
-
-The password is "ft_waNDReL0L"
+The password, as shown, seems to be "ft_wandrNDRelL0L", but it does not work.
+The invisible characters in the password means "erase the previous characterTherefore, the password is "ft_WaNDReL0L"
