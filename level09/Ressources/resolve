@@ -1,0 +1,18 @@
+a la racine il y a deux fichiers un qui permet de chiffrer ce qu on lui donne et un autre contenant la donnee chiffre
+
+apres plusieurs test on constate que l'exec prend comme argument un string puis le chiffre
+
+On fait deux tests:
+level09@SnowCrash:~$ ./level09 "coucou"
+cpwfsz
+level09@SnowCrash:~$ ./level09 "salut"
+sbnxx
+
+On peut voir qu'entre le string qu on lui donne et celui qui nous renvoie il y a le meme nombre de caractere.
+
+On ecrit un fichier c pour voir la difference qu il y a entre le premier string et le deuxieme.
+
+On voit que les caracteres sont modifie par rapport a leurs index
+
+On ecrit un fichier pour le dechiffrer puis on obtient:
+	f3iji1ju5yuevaus41q1afiuq

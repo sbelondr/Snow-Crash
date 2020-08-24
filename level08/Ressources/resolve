@@ -1,0 +1,25 @@
+il y a deux fichier a la racine level08 qui est un programme c compile et token qui est le fichier a lire
+
+
+l'hexa du code level08 ne nous apprends pas grand chose.
+
+nm:
+         U open@@GLIBC_2.0
+         U printf@@GLIBC_2.0
+         U read@@GLIBC_2.0
+         U strstr@@GLIBC_2.0
+         U write@@GLIBC_2.0
+
+
+on voit que le code utiliser peut nous permettre de faire de l'overflow,
+on commence donc par essayer avec read en lui donnant un gros fichier, cela ne crash pas car il stop a 1024 caractere.
+On test maintenant avec le strstr:
+
+Pour agrandir le nom du fichier:
+ln -sb ~/token /tmp/ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+
+Puis:
+./level08 /tmp/ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+> quif5eloekouj29ke0vouxean
+
+Exploit ok (pas comme prevu je voulais juste voir a quelle moment il utilise le strstr mais pourquoi pas)
