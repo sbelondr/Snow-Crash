@@ -1,18 +1,16 @@
 a la racine il y a deux fichiers un qui permet de chiffrer ce qu on lui donne et un autre contenant la donnee chiffre
+In the /home, there are two files:
+	- A binary that encrypt its argument
+	- A text file with encrypted text
 
-apres plusieurs test on constate que l'exec prend comme argument un string puis le chiffre
-
-On fait deux tests:
+With these two tests:
 level09@SnowCrash:~$ ./level09 "coucou"
 cpwfsz
 level09@SnowCrash:~$ ./level09 "salut"
 sbnxx
 
-On peut voir qu'entre le string qu on lui donne et celui qui nous renvoie il y a le meme nombre de caractere.
+We can start guessing the encryption chosen.
+We do a program	to gather more information about the encryption. We compute the difference between the two strings. We get that this is just a standard Cesar box cipher.
 
-On ecrit un fichier c pour voir la difference qu il y a entre le premier string et le deuxieme.
-
-On voit que les caracteres sont modifie par rapport a leurs index
-
-On ecrit un fichier pour le dechiffrer puis on obtient:
+With this knowledge, we write a program to decrypt the text file, and we get:
 	f3iji1ju5yuevaus41q1afiuq

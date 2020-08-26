@@ -23,4 +23,4 @@ wwwbugs login:
 ## Deduction
 
 The password, as shown, seems to be "ft_wandrNDRelL0L", but it does not work.
-The invisible characters in the password means "erase the previous characterTherefore, the password is "ft_WaNDReL0L"
+The invisible characters in the password means "erase the previous character", Therefore, the password is "ft_WaNDReL0L"

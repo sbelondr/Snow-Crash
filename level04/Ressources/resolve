@@ -1,21 +1,22 @@
 
 
-file in home is perl code
+The file in /home in a perl script.
 
 -----
 
 Permission is: rwsr-sr-x	flag04	level04
 
-s permission: Quand le SUID est activé sur un exécutable, l’utilisateur qui exécute le fichier dispose des mêmes droits que le propriétaire.
+The sticky bit (SUID) is set. This means this script runs with the same rights as its owner.
 
 https://linux.goffinet.org/administration/securite-locale/permissions-linux/
 
 
 -----
 
-launch program:
-	perl level04.pl w=...
+In order to use the script, we must pass an argument with the form of an url, with an x parameter which contains the actual user data that the script uses.
 
+example:
+	perl level04.pl http://www.example.com?x=bar
 
 	http://www.ouah.org/hackingcgi.htm
 	https://www.perlmonks.org/?node_id=444124
@@ -23,8 +24,11 @@ launch program:
 
 ----
 
-utiliser $(): https://stackoverflow.com/questions/39165520/execute-perl-script-from-bash-script
+There is a security vulnerability in this version of perl, that allows to bypass euid check when executing some commands, and as such execute arbitrary code with suid privileges:
+We need to use $() in the url
 
-executer des scripts dans des liens: https://www.cgsecurity.org/Articles/SecProg/Art6/index-fr.html
+https://stackoverflow.com/questions/39165520/execute-perl-script-from-bash-script
+https://www.cgsecurity.org/Articles/SecProg/Art6/index-fr.html
 
+Command :
 http://10.11.200.145:4747/?x=$(getflag)
