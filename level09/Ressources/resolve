@@ -1,4 +1,3 @@
-a la racine il y a deux fichiers un qui permet de chiffrer ce qu on lui donne et un autre contenant la donnee chiffre
 In the /home, there are two files:
 	- A binary that encrypt its argument
 	- A text file with encrypted text

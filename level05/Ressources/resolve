@@ -30,24 +30,12 @@ level05@SnowCrash:~$ ls -la /usr/sbin/openarenaserver
 level05@SnowCrash:~$ cat /rofs/usr/sbin/openarenaserver
 cat: /rofs/usr/sbin/openarenaserver: Permission denied
 
-------
-
-level05@SnowCrash:~$ find / -user 2005 2>/dev/null
-Which only returns the content of the /proc/ folder
-
-------
-
-openarena: https://doc.ubuntu-fr.org/openarena
-
 ----
-
 
 bash -x = run script in debug mode 
 ACLs chapitre 16
 
 https://www.linuxquestions.org/linux/answers/security/acls_extended_filepermissions
-
-https://github.com/opsxcq/exploit-CVE-2014-6271
 
 --------------
 

