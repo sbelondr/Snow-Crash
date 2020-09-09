@@ -6,8 +6,8 @@ nm result:
          U setresuid@@GLIBC_2.0
          U system@@GLIBC_2.0
 
-This program use system to execute command (here it's echo).
+This program use system to execute command (here its echo).
 
-You can exploit that to edit env with your properly echo which contain getflag command:
+You can exploit that to edit env with your own echo which contains getflag:
 
 PATH=/tmp:$PATH ./level03
